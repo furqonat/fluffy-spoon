@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "glad.h": "c",
+    "iostream": "cpp",
+    "iosfwd": "cpp"
+  }
+}

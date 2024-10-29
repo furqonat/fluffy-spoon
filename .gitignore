@@ -1,1 +1,22 @@
-build
+# CMake build files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executable and build directories
+build/
+dist/
+*.exe
+*.out
+*.o
+
+# Compiled libraries
+*.a
+*.lib
+*.so
+*.dll
+
+# OS-specific files
+.DS_Store
+Thumbs.db
