@@ -2,6 +2,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+MainScene::MainScene() : triangle2{vertices}
+{
+}
+
 void MainScene::run(std::shared_ptr<core::Canvas> renderer)
 {
     while (!glfwWindowShouldClose(mWindow))
@@ -12,6 +16,7 @@ void MainScene::run(std::shared_ptr<core::Canvas> renderer)
             renderer->draw();
         }
         triangle.draw();
+        triangle2.draw();
         glfwSwapBuffers(mWindow);
         glfwPollEvents();
     }

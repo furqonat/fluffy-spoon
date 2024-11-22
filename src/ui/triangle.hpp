@@ -3,6 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <core/canvas.hpp>
 #include <core/shader.hpp>
+#include <array>
 
 namespace ui
 {
@@ -10,13 +11,18 @@ namespace ui
     {
     public:
         Triangle();
+        Triangle(float vertices[9]);
         ~Triangle();
 
         void draw() override;
 
     private:
-        core::Shader shader;
-        unsigned int vbo;
-        unsigned int vba;
+        void init();
+
+    private:
+        core::Shader mShader;
+        std::array<float, 9> mVertices;
+        unsigned int mVbo;
+        unsigned int mVba;
     };
 }

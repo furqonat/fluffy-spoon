@@ -7,6 +7,4 @@ int main()
 
     MainScene scene;
     scene.run(nullptr);
-
-    return 0;
 }

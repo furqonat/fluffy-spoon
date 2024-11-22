@@ -4,11 +4,11 @@ cmake_minimum_required(VERSION 3.10)
 project(OpenGLProject VERSION 1.0)
 
 # Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add include directories for GLFW and GLAD
-include_directories(libs/glfw/include libs/glad/include src)
+include_directories(libs/glfw/include libs/glad/include src libs/stb)
 
 # Find and link OpenGL
 find_package(OpenGL REQUIRED)
@@ -35,3 +35,9 @@ add_executable(OpenGLProject main.cpp ${SRC_FILES})
 
 # Link libraries
 target_link_libraries(OpenGLProject glfw glad ${OPENGL_LIBRARIES})
+
+# Include path
+target_include_directories(OpenGLProject PRIVATE libs/glfw/include libs/glad/include src libs/stb)
+
+# Enable stb image feature
+target_compile_definitions(OpenGLProject PRIVATE STB_IMAGE_IMPLEMENTATION)
